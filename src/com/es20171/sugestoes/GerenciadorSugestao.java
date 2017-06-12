@@ -28,14 +28,14 @@ class GerenciadorSugestao {
 
     /**
      * Cria sugestão de livro e adiciona à lista de Sugestões
-     * @param nome Nome do livro
+     * @param titulo Nome do livro
      * @param autor Autor do livro
      * @param ISBN Código ISBN referente ao livro
      */
-    public void criaSugestaoLivro(String nome, String autor, String ISBN) {
+    public void criaSugestaoLivro(String titulo, String autor, String ISBN) {
         SugestaoLivro sug = new SugestaoLivro(contadorId++);
         sug.setData(LocalDateTime.now());
-        sug.setTitulo(nome);
+        sug.setTitulo(titulo);
         sug.setAutor(autor);
         sug.setISBN(ISBN);
 
