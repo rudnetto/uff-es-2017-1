@@ -38,8 +38,7 @@ class GerenciadorSugestao {
         sug.setTitulo(titulo);
         sug.setAutor(autor);
         sug.setISBN(ISBN);
-
-        listaSugestao.add(sug);
+        salvaSugestao(sug);
     }
 
     /**
@@ -54,7 +53,7 @@ class GerenciadorSugestao {
         sug.setNome(nome);
         sug.setLocal(local);
         sug.setDescricao(descricao);
-        listaSugestao.add(sug);
+        salvaSugestao(sug);
     }
 
     /**
@@ -66,5 +65,9 @@ class GerenciadorSugestao {
 
     public Sugestao getSugestaoAtIndex(int index) {
         return listaSugestao.get(index);
+    }
+
+    private void salvaSugestao(Sugestao sugestao) {
+        listaSugestao.add(sugestao);
     }
 }
