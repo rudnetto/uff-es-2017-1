@@ -1,10 +1,7 @@
-package com.es20171.main;
+package com.es20171.sugestoes;
 
 import java.time.LocalDateTime;
 
-/**
- * Created by rud on 11/06/2017.
- */
 public class Sugestao {
     private int id;
 
@@ -23,7 +20,6 @@ public class Sugestao {
     public int getId() {
         return id;
     }
-
 
     public int getTipo() {
         return tipo;

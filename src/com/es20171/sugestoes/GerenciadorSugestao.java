@@ -1,20 +1,15 @@
-package com.es20171.main;
+package com.es20171.sugestoes;
 
 import java.time.LocalDateTime;
-import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
-import java.util.Date;
 import java.util.List;
 
-/**
- * Created by rud on 11/06/2017.
- */
-public class GerenciadorSugestao {
+class GerenciadorSugestao {
     /**
      * instância de GerenciadorSugestão via singleton
      */
     private static GerenciadorSugestao instance;
-    private List<Sugestao> listaSugestao = new ArrayList<Sugestao>();
+    private List<Sugestao> listaSugestao = new ArrayList<>();
     private int contadorId = 0;
 
     private GerenciadorSugestao() { }
@@ -47,6 +42,12 @@ public class GerenciadorSugestao {
         listaSugestao.add(sug);
     }
 
+    /**
+     * Cria sugestão de evento e adiciona à lista de Sugestões
+     * @param nome Nome do evento
+     * @param local Local do evento
+     * @param descricao Descrição do evento
+     */
     public void criaSugestaoEvento(String nome, String local, String descricao) {
         SugestaoEvento sug = new SugestaoEvento(contadorId++);
         sug.setData(LocalDateTime.now());
@@ -56,14 +57,14 @@ public class GerenciadorSugestao {
         listaSugestao.add(sug);
     }
 
-    public String sugestoesToString() {
-        String output = "";
+    /**
+     * @return Lista de sugestões
+     */
+    public List<Sugestao> getSugestoes() {
+        return listaSugestao;
+    }
 
-        for (Sugestao item: listaSugestao) {
-            output += item.toString();
-            output += "----------\n";
-        }
-
-        return output;
+    public Sugestao getSugestaoAtIndex(int index) {
+        return listaSugestao.get(index);
     }
 }
